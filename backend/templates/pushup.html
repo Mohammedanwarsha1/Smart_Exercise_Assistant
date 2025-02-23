@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            background-color: rgba(246, 166, 250, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #5500ff;
+            font-family: Arial, sans-serif;
+            
+        }
+        .text-content {
+            max-width: 100%;
+        }
+        .image-content img {
+            padding-left: 20%;
+            max-width: 65%;
+            height: auto;
+            border-radius: 10px;
+        }
+        
+        h1 {
+            font-size: 24px;
+            margin-top: 0;
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 22px;
+            margin-top: 0;
+            letter-spacing: 2px;
+        }
+        
+        h3 {
+            font-size: 20px;
+            margin-top: 0;
+            letter-spacing: 2px;
+        }
+        
+        ul {
+            list-style-type: none;
+        }
+        
+        li {
+            font-size: 16px;
+        }
+
+        .back-button {
+            margin-left: 30%;
+            padding: 12px 24px;
+            background-color: #1a4de7;
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-style: oblique;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+          }
+          
+          .back-button:hover {
+            background-color: #f06f1f;
+            color: #f7f7f7;
+            transform: scale(1.1);
+          }
+      
+          .back-button:active {
+            transform: scale(0.9);
+          }
+      
+          
+
+        </style>
+</head>
+<body>
+    <div class="container">
+    <div class="text-content">
+        <h2>How to Do a Push-Up:</h2>
+        <h3>Starting Position:</h3>
+        <ul>
+            <li>Get into a plank position with hands slightly wider than shoulders.</li>
+            <li>Keep your body in a straight line from head to heels.</li>
+            <li>Keep your arms straight, but don’t lock your elbows.</li>
+        </ul>
+        
+        <h3>Lower Your Body:</h3>
+        <ul>
+            <li>Bend your elbows and lower your chest toward the floor.</li>
+            <li>Keep elbows at a slight angle, not flared out.</li>
+            <li>Lower yourself until your chest is close to or lightly touches the floor.</li>
+        </ul>
+        <h3>Maintain Form:</h3>
+        <ul>
+            <li>Keep your neck neutral — look slightly ahead, not straight down.</li>
+            <li>Don’t let your hips sag or rise too high; maintain the straight body line.</li>
+        </ul>
+        
+        
+        <h3>Push Back Up:</h3>
+        <ul>
+            <li>Press through your palms to straighten your arms and lift your body back to the starting position.
+            </li>
+            <li>Exhale as you push up.</li>
+            
+        </ul>
+        
+        
+        <br>
+        <input type="button" value="Go Back" class="back-button" onclick="history.back()">
+    </div>
+
+    <div class="image-content">
+        <img src="../pictures/pushup.png" alt="Squat Exercise">
+    </div>
+    </div>
+    
+</body>
+</html>
+

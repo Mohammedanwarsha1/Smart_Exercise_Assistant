@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fitter - A Fitness App</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      background-image: url('https://th.bing.com/th/id/OIP.41E9KbQWpgXpXMdF-rOIIAHaE8?w=626&h=418&rs=1&pid=ImgDetMain');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: Arial, sans-serif;
+      /*background-color: #f7f7f7;*/
+      margin: 0;
+      padding: 0;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 40px;
+      margin-top: 10%;
+      background-color: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    @keyframes slideIn {
+      from {
+        transform: translateY(-30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    h1 {
+      text-align: center;
+      color: #5500ff;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      padding-bottom: 20px;
+      font-size: 24px;
+      letter-spacing: 2px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #060000;
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+    }
+    
+    .form-group input[type="radio"] {
+      margin-right: 10px;
+      transform: scale(1);
+      transition: transform 0.2s ease-in-out;
+    }
+
+
+    .form-group input[type="radio"]:checked {
+      transform: scale(1.2);
+      accent-color: #1a4de7;
+    }
+    
+    .submit-button, .navigate-button {
+      text-align: center;
+      margin-top: 30px;
+    
+    }
+    
+    .submit-button button {
+      padding: 12px 24px;
+      background-color: #1a4de7;
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-style: oblique;
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    
+    .submit-button button:hover {
+      background-color: #ad3cd0;
+      color: #f7f7f7;
+      transform: scale(1.1);
+    }
+
+    .submit-button button:active {
+      transform: scale(0.9);
+    }
+
+    
+    
+    .container {
+      background-color: rgba(247, 247, 248, 0.9);
+    }
+    
+    h1 {
+      font-size: 24px;
+      margin-top: 0;
+      letter-spacing: 2px;
+    }
+    
+    .form-group label {
+      font-size: 16px;
+    }
+    
+    .submit-button button:hover {
+      background-color: #ad3cd0;
+      color: #f7f7f7;
+      transform: scale(1.1);
+    }
+
+    .submit-button button:active {
+      transform: scale(0.9);
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .clicked {
+      animation: bounce 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>SELECT EXERCISE</h1>
+    <form method="GET" action="{{ url_for('show') }}">
+      <div class="form-group">
+        <label>
+          <input type="radio" name="sub" value="left">
+          LEFT ARM BICEP CURL
+        </label>
+      </div>
+      <div class="form-group">
+        <label>
+          <input type="radio" name="sub" value="right">
+          RIGHT ARM BICEP CURL
+        </label>
+      </div>
+      <div class="form-group">
+        <label>
+          <input type="radio" name="sub" value="pushup">
+          PUSHUP
+        </label>
+      </div>
+      <div class="form-group">
+        <label>
+          <input type="radio" name="sub" value="squat">
+          SQUAT
+        </label>
+      </div>
+      <div class="submit-button">
+        <button type="submit" onclick="animateButton()">Submit</button>
+        
+      </div>
+    </form>
+    <!-- New Navigation Button 
+    <div class="navigate-button">
+      <button onclick="window.location.href='learn.html'">Learn Exercises</button>
+  </div>-->
+
+  <div class="navigate-dropdown">
+    <select onchange="navigate(this.value)">
+        <option value="">Learn Exercise</option>
+        
+        <option value="squat.html">Squat Guide</option>
+        <option value="pushup.html">pushup Guide</option>
+    </select>
+</div>
+
+<script>
+    function navigate(page) {
+        if (page) {
+            window.location.href = page;
+        }
+    }
+</script>
+  </div>
+</body>
+</html>
