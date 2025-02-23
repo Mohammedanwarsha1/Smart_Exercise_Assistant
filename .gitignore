@@ -53,4 +53,6 @@ web/*/static/media/
 web/*/static/images/
 web/*/static/assets/
 web/*/static/css/
-*.envvenv/
+venv/
+env/
+.my_env/
