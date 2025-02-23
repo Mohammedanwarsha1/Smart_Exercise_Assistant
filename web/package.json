@@ -1,0 +1,24 @@
+{
+    "name": "web",
+    "version": "1.0.0",
+    "description": "<h2 align=\"center\">Website for Models Demonstration</h2>",
+    "main": "index.js",
+    "scripts": {
+        "install:client": "cd ./client && npm i",
+        "dev:client": "cd ./client && npm run dev",
+        "build-deploy:client": "cd ./client && npm run build:deploy",
+        "install:server": "pip install -r requirements.txt",
+        "dev:server": "cd ./server && python manage.py runserver",
+        "install:all": "npm run install:client && npm run install:server",
+        "start:website": "npm run build-deploy:client && npm run dev:server",
+        "dev:fastapi": "cd .. && set PYTHONPATH=web && uvicorn web.fastapi_app.fastapi_app:app --host 127.0.0.1 --port 8001 --reload"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@mediapipe/camera_utils": "^0.3.1675466862",
+        "@mediapipe/drawing_utils": "^0.3.1675466124",
+        "@mediapipe/pose": "^0.5.1675469404"
+    }
+}

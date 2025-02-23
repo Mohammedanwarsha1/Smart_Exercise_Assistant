@@ -1,0 +1,32 @@
+{
+  "name": "exercise-correction",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:deploy": "npm run set-base-url && npm run build && npm run move-build-to-server",
+    "preview": "vite preview --port 4173",
+    "test:unit": "vitest --environment jsdom",
+    "move:assets": "powershell -Command \"Copy-Item -Recurse -Force ./dist/static/* ../server/static/\"",
+    "move:index": "powershell -Command \"Copy-Item -Force ./dist/index.html ../server/templates/\"",
+    "move-build-to-server": "npm run move:assets && npm run move:index",
+    "set-base-url": "powershell -Command \"Remove-Item -Force .env.local; Add-Content .env.local 'VITE_BASE_URL=http://127.0.0.1'\""
+  },
+  "dependencies": {
+    "@mediapipe/camera_utils": "^0.3.1675465971",
+    "@mediapipe/drawing_utils": "^0.3.1657299202",
+    "@mediapipe/pose": "^0.4.1633558788",
+    "axios": "^1.1.2",
+    "pinia": "^2.0.21",
+    "sass": "^1.55.0",
+    "vue": "^3.2.38",
+    "vue-router": "^4.1.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/test-utils": "^2.0.2",
+    "jsdom": "^20.0.0",
+    "vite": "^6.1.0",
+    "vitest": "^3.0.5"
+  }
+}

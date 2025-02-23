@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            #app {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh; /* Full viewport height */
+                background-image: url('https://th.bing.com/th/id/OIP.41E9KbQWpgXpXMdF-rOIIAHaE8?w=626&h=418&rs=1&pid=ImgDetMain');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                font-family: Arial, sans-serif;
+            }
+            
+            /* General body styling */
+            body {
+                background-image: url('https://th.bing.com/th/id/OIP.41E9KbQWpgXpXMdF-rOIIAHaE8?w=626&h=418&rs=1&pid=ImgDetMain');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                font-family: Arial, sans-serif;
+                /*background-color: #f7f7f7;*/
+                margin: 0;
+                padding: 0;
+              }
+        </style>
+
+        <!--
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        -->
+
+        <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils"></script>
+        <title>Exercise Correction</title>
+    </head>
+    <body>
+        <div id="app"></div>
+        <script type="module" src="/src/main.js"></script>
+    </body>
+</html>
