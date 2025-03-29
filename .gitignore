@@ -56,3 +56,4 @@ web/*/static/css/
 venv/
 env/
 .my_env/
+.qodo

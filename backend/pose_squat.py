@@ -89,3 +89,5 @@ def squat():
                 # Yield the frame as a bytes-like object
                 yield (b'--frame\r\n'
                     b'Content-Type: image/jpeg\r\n\r\n' + jpeg.tobytes() + b'\r\n\r\n')
+
+                    

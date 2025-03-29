@@ -3,6 +3,7 @@ from pose_left import left_curl
 from pose_right import right_curl
 from pose_pushup import pushup
 from pose_squat import squat
+from pose_deadlift import deadlift
 import cv2
 import mediapipe as mp
 import numpy as np
@@ -37,6 +38,14 @@ def video_feed_pushup():
 def video_feed_squat():
     return Response(squat(),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
+
+@app.route('/video_feed_deadlift')
+def video_feed_deadlift():
+    return Response(deadlift(),
+                    mimetype='multipart/x-mixed-replace; boundary=frame')
+
+
+
 
 @app.route('/show')
 def show():

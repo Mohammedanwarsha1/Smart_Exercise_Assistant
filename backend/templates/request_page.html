@@ -6,6 +6,48 @@
     * {
       box-sizing: border-box;
     }
+
+
+
+      /* Container for buttons */
+  .exercise-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px;
+  }
+
+  /* Style for the buttons */
+  .exercise-buttons button {
+    flex: 1 1 calc(50% - 10px); /* Two buttons per row */
+    padding: 20px 40px;
+    background: linear-gradient(135deg, #4575be, #3e15e3);
+    color: #fff;
+    border: none;
+    border-radius: 25px; /* Curved rectangle */
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    height:75px;
+    cursor:pointer;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, background 0.3s ease;
+  }
+
+  .exercise-buttons button:hover {
+    background: linear-gradient(135deg, #4b42d4, #6c63ff);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .exercise-buttons button:active {
+    transform: translateY(2px);
+  }
+
+
+
     
     body {
       background-image: url('https://th.bing.com/th/id/OIP.41E9KbQWpgXpXMdF-rOIIAHaE8?w=626&h=418&rs=1&pid=ImgDetMain');
@@ -25,12 +67,14 @@
     }
 
     .container {
-      max-width: 400px;
+      max-width: 600px;
+      height: auto;
+      
       margin: 0 auto;
-      padding: 40px;
-      margin-top: 10%;
+      padding: 50px;
+      margin:5% auto;
       background-color: #ffffff;
-      border-radius: 20px;
+      border-radius: 50px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
     
@@ -55,30 +99,12 @@
       letter-spacing: 2px;
     }
     
-    .form-group {
-      margin-bottom: 20px;
-    }
     
-    .form-group label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 10px;
-      color: #060000;
-      transition: transform 0.3s ease-in-out;
-      cursor: pointer;
-    }
     
-    .form-group input[type="radio"] {
-      margin-right: 10px;
-      transform: scale(1);
-      transition: transform 0.2s ease-in-out;
-    }
+    
 
 
-    .form-group input[type="radio"]:checked {
-      transform: scale(1.2);
-      accent-color: #1a4de7;
-    }
+   
     
     .submit-button, .navigate-button {
       text-align: center;
@@ -91,7 +117,7 @@
       background-color: #1a4de7;
       color: #ffffff;
       border: none;
-      border-radius: 10px;
+      border-radius: 20px;
       cursor: pointer;
       font-style: oblique;
       font-size: 16px;
@@ -145,52 +171,110 @@
     .clicked {
       animation: bounce 0.3s ease-in-out;
     }
+
+
+    .navigate-dropdown {
+      text-align: center;
+      margin-top: 20px;
+  }
+  
+  /* Style for the select element */
+  .navigate-dropdown select {
+      padding: 10px 15px;
+      font-size: 18px;
+      font-style: oblique;
+      border: 2px solid #6c63ff;
+      border-radius: 20px;
+      background: #ffffff;
+      color: #4529e6;
+      outline: none;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+  }
+
+  .navigate-dropdown select:hover {
+    background: #ad3cd0;
+    color: #ffffff;
+    border-color: #4b42d4;
+}
+
+/* Focus effect */
+.navigate-dropdown select:focus {
+    border-color: #4b42d4;
+    box-shadow: 0 0 6px blue;
+}
+
+/* Style for the dropdown options */
+.navigate-dropdown select option {
+    padding: 10px;
+    background: #ffffff;
+    color: black;
+}
+
+/* Style for the selected option */
+.navigate-dropdown select option:checked {
+    background: #6c63ff;
+    color: #ffffff;
+}
+
+.big-text {
+  padding-top: 0px;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-style: italic;
+  color: blue;
+  text-transform: none;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease-out 0.5s forwards; /* Delayed animation */
+  display: block;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+
+
+
   </style>
 </head>
 <body>
+  <h2 class="big-text">Fitness Corrector</h2>
   <div class="container">
     <h1>SELECT EXERCISE</h1>
     <form method="GET" action="{{ url_for('show') }}">
-      <div class="form-group">
-        <label>
-          <input type="radio" name="sub" value="left">
-          LEFT ARM BICEP CURL
-        </label>
+      <div class="exercise-buttons">
+          <button name="sub" value="left">LEFT ARM BICEP CURL</button>
+
+          <button name="sub" value="right">RIGHT ARM BICEP CURL</button>
+
+          <button name="sub" value="pushup">PUSHUP</button>
+ 
+          <button name="sub" value="squat" >SQUAT</button>
+
+          <button name="sub" value="deadlift" >DEADLIFT</button>
+        
       </div>
-      <div class="form-group">
-        <label>
-          <input type="radio" name="sub" value="right">
-          RIGHT ARM BICEP CURL
-        </label>
-      </div>
-      <div class="form-group">
-        <label>
-          <input type="radio" name="sub" value="pushup">
-          PUSHUP
-        </label>
-      </div>
-      <div class="form-group">
-        <label>
-          <input type="radio" name="sub" value="squat">
-          SQUAT
-        </label>
-      </div>
+      <!--
       <div class="submit-button">
         <button type="submit" onclick="animateButton()">Submit</button>
         
-      </div>
+      </div> -->
     </form>
     <!-- New Navigation Button 
     <div class="navigate-button">
       <button onclick="window.location.href='learn.html'">Learn Exercises</button>
   </div>-->
 
+</div>
   <div class="navigate-dropdown">
     <select onchange="navigate(this.value)">
         <option value="">Learn Exercise</option>
         
-        <option value="squat.html">Squat Guide</option>
-        <option value="pushup.html">pushup Guide</option>
+        <option value="/static/guides/squat.html">Squat Guide</option>
+        <option value="/static/guides/pushup.html">Pushup Guide</option>
+        <option value="/static/guides/bicep.html">Bicep Guide</option>
     </select>
 </div>
 
@@ -198,9 +282,10 @@
     function navigate(page) {
         if (page) {
             window.location.href = page;
-        }
+
     }
+  }
 </script>
-  </div>
+ 
 </body>
 </html>
